@@ -1,7 +1,7 @@
 import {faker} from '@faker-js/faker'
 export default function handler(req, res) {
     const user={
-        userId: faker.datatype.uuid(),
+        userId: faker.datatype.number(),
         username: faker.internet.userName(),
         email: faker.internet.email(),
         avatar: faker.image.avatar(),
