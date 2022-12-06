@@ -36,7 +36,9 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>Mockup Api</h1>
+            <h6 className={utilStyles.headingLg}>Please coffee me! Thank</h6>
+            <h6 className={utilStyles.headingLg}>Bellamy</h6>
           </>
         ) : (
           <>
