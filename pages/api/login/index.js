@@ -12,5 +12,5 @@ export default function handler(req, res) {
         address:faker.address.street()
     
     }
-    res.status(200).json(user);
+    res.status(200).json({data:user});
   }
