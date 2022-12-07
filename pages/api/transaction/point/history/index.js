@@ -3,9 +3,9 @@ import okMessage, { okMessagePaging } from "../../../../../lib/okmessage";
 function spending(){
     return {
         id:faker.datatype.number(),
-        createAt:faker.date.recent(),
+        create_at:faker.date.recent(),
         point :faker.datatype.number(100000),
-        couponName:faker.random.word()
+        coupon_name:faker.random.word()
     }
   }
 
