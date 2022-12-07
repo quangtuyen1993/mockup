@@ -10,10 +10,7 @@ function spending(){
   }
 
 export default function handler(req, res) {
-  const USERS= [];
-
-
-  
+  const USERS= [];  
   Array.from({length:10}).forEach(()=>USERS.push(spending()));
   var {page,limit}= req.query;
     res.status(200).json({
