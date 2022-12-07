@@ -16,10 +16,10 @@ export default function handler(req, res) {
         member_no: faker.datatype.number(),
         membership_name: faker.finance.accountName(),
         point: faker.datatype.number(),
-        spending: faker.datatype.number(10,100),
+        spending: faker.datatype.number(20,80),
         expired_at: faker.date.future(),
         min:faker.datatype.number(0,10),
-        max:faker.datatype.number(10,100),
+        max:faker.datatype.number(90,100),
   }
     res.status(200).json(okMessage(userMe));
   }
