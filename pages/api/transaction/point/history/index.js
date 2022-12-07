@@ -1,5 +1,5 @@
 import {faker} from "@faker-js/faker";
-import okMessage from "../../../../../lib/okmessage";
+import okMessage, { okMessagePaging } from "../../../../../lib/okmessage";
 function spending(){
     return {
         id:faker.datatype.number(),
@@ -13,9 +13,5 @@ export default function handler(req, res) {
   const USERS= [];  
   Array.from({length:10}).forEach(()=>USERS.push(spending()));
   var {page,limit}= req.query;
-    res.status(200).json(okMessage({
-      page:page??1,
-      data:USERS,
-      total:30
-    }));
+    res.status(200).json(okMessagePaging(USERS,page));
   }
