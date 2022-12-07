@@ -26,7 +26,7 @@ export default function Home({ allPostsData }) {
       </section>
       <section className={utilStyles.headingMd}>
         <p>
-          <a href="https://mockup-pizza-legato.vercel.app"> Domain</a>
+          https://mockup-git-main-pizza-legato.vercel.app/api endpoint
         </p>
       </section>
 
