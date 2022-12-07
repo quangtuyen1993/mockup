@@ -1,5 +1,4 @@
 import { faker } from "@faker-js/faker";
-import { max, min } from "date-fns";
 import okMessage from "../../../lib/okmessage";
 
 export default function handler(req, res) {
