@@ -18,8 +18,8 @@ export default function handler(req, res) {
         point: faker.datatype.number(),
         spending: faker.datatype.number(10,100),
         expired_at: faker.date.future(),
-        min:faker.datatype.number(10),
-        max:faker.datatype.number(100),
+        min:faker.datatype.number(0,10),
+        max:faker.datatype.number(10,100),
   }
     res.status(200).json(okMessage(userMe));
   }
