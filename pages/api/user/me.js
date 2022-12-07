@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import { max, min } from "date-fns";
 import okMessage from "../../../lib/okmessage";
 
 export default function handler(req, res) {
@@ -15,7 +16,7 @@ export default function handler(req, res) {
         member_no: faker.datatype.number(),
         membership_name: faker.finance.accountName(),
         point: faker.datatype.number(),
-        spending: faker.datatype.number(),
+        spending: faker.datatype.number(10,100),
         expired_at: faker.date.future(),
         min:faker.datatype.number(10),
         max:faker.datatype.number(100),
