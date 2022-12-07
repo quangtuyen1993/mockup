@@ -1,4 +1,5 @@
 import {faker} from '@faker-js/faker'
+import okMessage from '../../../lib/okmessage'
 export default function handler(req, res) {
     const user={
         userId: faker.datatype.number(),
@@ -12,5 +13,5 @@ export default function handler(req, res) {
         address:faker.address.street()
     
     }
-    res.status(200).json({data:user});
+    res.status(200).json(okMessage(user));
   }
