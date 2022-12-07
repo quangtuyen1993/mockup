@@ -4,7 +4,7 @@ function spending(){
     return {
         id:faker.datatype.number(),
         createAt:faker.date.recent(),
-        point :faker.finance.amount(),
+        point :faker.datatype.number(100000),
         couponName:faker.random.word()
     }
   }

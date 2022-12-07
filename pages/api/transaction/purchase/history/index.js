@@ -5,8 +5,8 @@ import okMessage, { okMessagePaging } from "../../../../../lib/okmessage";
   return{
     id:faker.datatype.number(),
     createAt:faker.date.recent(),
-    total_amount:faker.finance.amount(),
-    point:faker.finance.account()
+    total_amount:faker.datatype.number(100000),
+    point:faker.datatype.number(100000)
   }
  }
 
