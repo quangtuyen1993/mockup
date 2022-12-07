@@ -3,8 +3,9 @@ import okMessage, { okMessagePaging } from "../../../../lib/okmessage";
 
 
 export default function handler(req, res) {
+    const {page}=res.query;
     const data={ banner:createBanner(),news_list:createNewList()}
-    res.status(200).json(okMessagePaging(data));
+    res.status(200).json(okMessagePaging(data,page));
 }
 
 
