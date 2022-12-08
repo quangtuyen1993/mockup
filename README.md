@@ -1,6 +1,6 @@
 # api mocked
 
-## to get error message
+## 1. To get error message
 
 please add ```?error=1```
 example:
@@ -10,7 +10,12 @@ example:
  http://localhost:3000/api/user/login?search=mock&&error=1
  ```
 
-## list done
+## 2.modified type
+
+To modify a file, find the file by flow by URL in the swagger doc
+example /api/coupon/get/[id]  -> {{url}}/page/api/coupon/get/[id].js
+
+## 3.list tracker
 
 ```list tracker
 ├ λ /api/coupon/get/[id]                   0 B            73.2 kB
@@ -45,3 +50,7 @@ example:
 ├ λ /api/user/sms/sign-up/verify           0 B            73.2 kB
 ├ λ /api/user/update                       0 B            73.2 kB
 ```
+
+## Finally
+
+ I am poor. Please coffee me. Many thanks
