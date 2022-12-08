@@ -11,7 +11,7 @@ function getUser(){
     Array.from({length:10}).forEach(()=>images.push(faker.image.food()))
     return  {
         "title": faker.company.name(),
-        "content": faker.lorem.slug(1000),
+        "content": faker.lorem.paragraphs(30),
         "image_list": images
     }
 }

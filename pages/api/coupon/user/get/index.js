@@ -10,7 +10,7 @@ function _new (){
         id: faker.datatype.number(),
         name: faker.company.name(),
         description: faker.lorem.paragraph(),
-        terms_conditions: faker.lorem.slug(300),
+        terms_conditions: faker.lorem.paragraphs(300),
         image: faker.image.animals(),
         expired_at: faker.date.future(),
         point: faker.datatype.number(),

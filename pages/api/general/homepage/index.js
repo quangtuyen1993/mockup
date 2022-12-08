@@ -11,10 +11,10 @@ export default function handler(req, res) {
 
 function createBanner(){
     const banners=[]
-    const banner={
+    const banner=()=>({
         id:faker.datatype.number(),
         image:faker.image.city()
-    }
+    })
     Array.from({length:3}).forEach(()=>banners.push(banner))
     return banners;
 }

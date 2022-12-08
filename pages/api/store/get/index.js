@@ -10,7 +10,7 @@ export default function handler(req, res) {
         district_name: faker.address.state(),
         status: faker.datatype.number({min:0,max:1}),
         banner: [
-        faker.image.fashion()
+          faker.image.fashion()
         ],
         phone_no: faker.phone.number(),
         address: faker.address.streetAddress(),
