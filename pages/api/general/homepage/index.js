@@ -8,14 +8,13 @@ export default function handler(req, res) {
     res.status(200).json(okMessagePaging(data,page));
 }
 
-
 function createBanner(){
     const banners=[]
     const banner=()=>({
         id:faker.datatype.number(),
         image:faker.image.city()
     })
-    Array.from({length:3}).forEach(()=>banners.push(banner))
+    Array.from({length:3}).forEach(()=>banners.push(banner()))
     return banners;
 }
 
