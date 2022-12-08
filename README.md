@@ -10,12 +10,12 @@ example:
  http://localhost:3000/api/user/login?search=mock&&error=1
  ```
 
-## 2.modified type
+## 2. Modified type
 
 To modify a file, find the file by flow by URL in the swagger doc
-example /api/coupon/get/[id]  -> {{url}}/page/api/coupon/get/[id].js
+```example: /api/coupon/get/[id]  -> {{url}}/page/api/coupon/get/[id].js```
 
-## 3.list tracker
+## 3. List tracker
 
 ```list tracker
 ├ λ /api/coupon/get/[id]                   0 B            73.2 kB
