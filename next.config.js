@@ -8,11 +8,6 @@ module.exports = (phase, { defaultConfig }) => {
             appDir: true,
             allowMiddlewareResponseBody:true
         },
-        webpack5: true,
-        webpack: (config) => {
-            config.resolve.fallback = { fs: false };
-            return config;
-        },
         reactStrictMode: true,
     }
     return nextConfig
