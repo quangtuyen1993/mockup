@@ -4,13 +4,13 @@ import { DataResult, success } from '../../../../../lib/DataResult';
 
 type User={
     id: number,
-        name: String,
-        description: String,
-        terms_conditions: String,
-        image: String,
-        expired_at: Date,
-        point: number,
-        qrcode: String
+    name: String,
+    description: String,
+    terms_conditions: String,
+    image: String,
+    expired_at: Date,
+    point: number,
+    qrcode: String
 }
 
 export default function handler(req:NextApiRequest, res:NextApiResponse<DataResult<User>>) {
