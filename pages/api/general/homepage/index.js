@@ -3,7 +3,7 @@ import okMessage, { okMessagePaging } from "../../../../lib/okmessage";
 
 
 export default function handler(req, res) {
-    const {page}=res.query;
+    var {page,limit}= req.query;
     const data={ banner:createBanner(),news_list:createNewList()}
     res.status(200).json(okMessagePaging(data,page));
 }
@@ -21,11 +21,11 @@ function createBanner(){
 
 function createNewList(){
     const news_list=[]
-    const _new={
+    const _new=()=>({
         id:faker.datatype.number(),
         title:faker.lorem.lines(),
         image:faker.image.city()
-    }
-    Array.from({length:3}).forEach(()=>news_list.push(_new))
+    })
+    Array.from({length:3}).forEach(()=>news_list.push(_new()))
     return news_list;
 }
