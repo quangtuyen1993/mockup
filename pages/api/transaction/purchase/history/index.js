@@ -6,7 +6,9 @@ import okMessage, { okMessagePaging } from "../../../../../lib/okmessage";
     id:faker.datatype.number(),
     createAt:faker.date.recent(),
     total_amount:faker.datatype.number(100000),
-    point:faker.datatype.number(100000)
+    point:faker.datatype.number(100000),
+    store_name:faker.animal.bird()
+
   }
  }
 
