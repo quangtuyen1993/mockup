@@ -13,7 +13,7 @@ example:
 ## 2. Modified type
 
 To modify a file, find the file by flow by URL in the swagger doc
-```example: /api/coupon/get/[id]  -> {{url}}/page/api/coupon/get/[id].js```
+```example: /api/coupon/get/[id]  -> {{projectDir}}/page/api/coupon/get/[id].js```
 
 ## 3. List tracker
 
