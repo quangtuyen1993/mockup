@@ -1,16 +1,18 @@
 # api mocked
 
-## to get error message 
+## to get error message
+
 please add ```?error=1```
 example:
- ```
+
+ ```example
  http://localhost:3000/api/user/login?error=1
  http://localhost:3000/api/user/login?search=mock&&error=1
-
  ```
 
-## list done.
-```
+## list done
+
+```list tracker
 ├ λ /api/coupon/get/[id]                   0 B            73.2 kB
 ├ λ /api/coupon/list                       0 B            73.2 kB
 ├ λ /api/coupon/redeem                     0 B            73.2 kB
@@ -30,10 +32,16 @@ example:
 ├ λ /api/transaction/new-purchase          0 B            73.2 kB
 ├ λ /api/transaction/point/history         0 B            73.2 kB
 ├ λ /api/transaction/purchase/history      0 B            73.2 kB
+├ λ /api/user/delete-account               0 B            73.2 kB
+├ λ /api/user/form/dropdown                0 B            73.2 kB
 ├ λ /api/user/login                        0 B            73.2 kB
 ├ λ /api/user/logout                       0 B            73.2 kB
 ├ λ /api/user/me                           0 B            73.2 kB
+├ λ /api/user/password/reset               0 B            73.2 kB
+├ λ /api/user/sms/forgot-password/reset    0 B            73.2 kB
+├ λ /api/user/sms/send-verify              0 B            73.2 kB
 ├ λ /api/user/sms/sign-up                  0 B            73.2 kB
 ├ λ /api/user/sms/sign-up/request          0 B            73.2 kB
 ├ λ /api/user/sms/sign-up/verify           0 B            73.2 kB
+├ λ /api/user/update                       0 B            73.2 kB
 ```
