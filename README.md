@@ -1,6 +1,6 @@
 # File with heading
 api mocked
-
+```
  λ /api/coupon/get/[id]                   0 B            73.2 kB
 ├ λ /api/coupon/list                       0 B            73.2 kB
 ├ λ /api/coupon/redeem                     0 B            73.2 kB
@@ -25,3 +25,4 @@ api mocked
 ├ λ /api/user/sms/sign-up                  0 B            73.2 kB
 ├ λ /api/user/sms/sign-up/request          0 B            73.2 kB
 ├ λ /api/user/sms/sign-up/verify           0 B            73.2 kB
+```
