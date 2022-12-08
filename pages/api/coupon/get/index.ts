@@ -15,12 +15,12 @@ export default function handler(
 
 type News = {
     id: number;
-    name: String;
-    description: String;
-    thumbnail: String;
+    name: string;
+    description: string;
+    thumbnail: string;
     point: number;
-    terms_conditions: String;
-    image: String;
+    terms_conditions: string;
+    image: string;
 };
 
 function createNews(): News {

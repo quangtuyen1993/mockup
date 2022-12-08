@@ -7,13 +7,13 @@ import { DataResult, success } from '../../../../../lib/DataResult';
 
 type User = {
     id: number;
-    name: String;
-    description: String;
-    terms_conditions: String;
-    image: String;
+    name: string;
+    description: string;
+    terms_conditions: string;
+    image: string;
     expired_at: Date;
     point: number;
-    qrcode: String;
+    qrcode: string;
 };
 
 export default function handler(

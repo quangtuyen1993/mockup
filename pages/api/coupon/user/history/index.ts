@@ -8,9 +8,9 @@ import { DataResult, successPaging } from '../../../../../lib/DataResult';
 
 type History = {
     id: number;
-    name: String;
-    description: String;
-    thumbnail: String;
+    name: string;
+    description: string;
+    thumbnail: string;
     status: number;
     used_at: Date;
     expired_at: Date;

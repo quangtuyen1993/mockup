@@ -7,10 +7,10 @@ import { DataResult, success } from '../../../../../../lib/DataResult';
 
 type HistoryCoupon = {
     id: number;
-    name: String;
-    description: String;
-    terms_conditions: String;
-    image: String;
+    name: string;
+    description: string;
+    terms_conditions: string;
+    image: string;
     status: number;
     used_at: Date;
     expired_at: Date;

@@ -8,9 +8,9 @@ import { generateList } from '../../../../lib/Utils';
 
 type New = {
     id: number;
-    name: String;
-    description: String;
-    thumbnail: String;
+    name: string;
+    description: string;
+    thumbnail: string;
     point: number;
 };
 

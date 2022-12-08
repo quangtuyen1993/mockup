@@ -1,7 +1,5 @@
 import { NextApiRequest } from './../node_modules/next/dist/shared/lib/utils.d';
-import { number } from './../node_modules/property-information/lib/util/types.d';
 import { faker } from '@faker-js/faker';
-import { NextApiResponse } from 'next';
 
 export interface DataResult<T> {}
 
@@ -12,7 +10,7 @@ export type Metadata = {
 };
 
 export interface Success<T> extends DataResult<T> {
-    message: String;
+    message: string;
     server_time: Date;
     data?: T;
 }
@@ -23,7 +21,7 @@ export class EmptySuccess implements DataResult<any> {
 }
 
 export interface Error<T> extends DataResult<T> {
-    message: String;
+    message: string;
     server_time: Date;
 }
 
@@ -40,7 +38,7 @@ export function success<T>(data: T): Success<T> {
     };
 }
 
-export function error<T>(message: String): Error<T> {
+export function error<T>(message: string): Error<T> {
     return {
         message: message,
         server_time: faker.date.recent()
