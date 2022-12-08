@@ -6,6 +6,7 @@ module.exports = (phase, { defaultConfig }) => {
         swcMinify: true,
         experimental: {
             appDir: true,
+            allowMiddlewareResponseBody:true
         },
         webpack5: true,
         webpack: (config) => {

@@ -1,5 +1,5 @@
 import {faker} from '@faker-js/faker'
-import okMessage from '../../../lib/okmessage'
+import okMessage from '../../../../lib/okmessage'
 export default function handler(req, res) {
     const user={
         userId: faker.datatype.number(),
