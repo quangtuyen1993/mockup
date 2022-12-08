@@ -2,8 +2,7 @@ import okMessage from "../../../../../../lib/okmessage";
 import { faker } from "@faker-js/faker";
 
 export default function handler(req, res) {
-    const body = JSON.parse(req.body)
-    if(body['otp'] == '123456'){
+    if(req.body('otp')){
         const data = {
             verification_code: faker.datatype.uuid()
         }
