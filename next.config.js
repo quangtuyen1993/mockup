@@ -6,9 +6,9 @@ module.exports = (phase, { defaultConfig }) => {
         swcMinify: true,
         experimental: {
             appDir: true,
-            allowMiddlewareResponseBody:true
+            allowMiddlewareResponseBody: true
         },
-        reactStrictMode: true,
-    }
-    return nextConfig
-}
+        reactStrictMode: true
+    };
+    return nextConfig;
+};

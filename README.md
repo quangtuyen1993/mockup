@@ -2,18 +2,18 @@
 
 ## 1. To get error message
 
-please add ```?error=1```
+please add `?error=1`
 example:
 
- ```example
- http://localhost:3000/api/user/login?error=1
- http://localhost:3000/api/user/login?search=mock&&error=1
- ```
+```example
+http://localhost:3000/api/user/login?error=1
+http://localhost:3000/api/user/login?search=mock&&error=1
+```
 
 ## 2. Modified type
 
 To modify a file, find the file by flow by URL in the swagger doc
-```example: /api/coupon/get/[id]  -> {{projectDir}}/page/api/coupon/get/[id].js```
+`example: /api/coupon/get/[id]  -> {{projectDir}}/page/api/coupon/get/[id].js`
 
 ## 3. List tracker
 
@@ -53,4 +53,4 @@ To modify a file, find the file by flow by URL in the swagger doc
 
 ## Finally
 
- I am poor. Please coffee me. Many thanks
+I am poor. Please coffee me. Many thanks
