@@ -3,7 +3,7 @@ import {
     NextApiResponse
 } from 'next/dist/shared/lib/utils';
 import { faker } from '@faker-js/faker';
-import { success } from '../../../../lib/DataResult';
+import { success } from '../../../lib/DataResult';
 
 type User = {
     userId: number;
