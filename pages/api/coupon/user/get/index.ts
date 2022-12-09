@@ -3,7 +3,8 @@ import {
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { DataResult, success } from '../../../../../lib/DataResult';
+import { DataResult, success } from '../../../../../lib/data_result';
+import { withSafeRequest } from '../../../../../lib/with_safe_request';
 
 type User = {
     id: number;
@@ -16,7 +17,7 @@ type User = {
     qrcode: string;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<User>>
 ) {
@@ -35,3 +36,5 @@ function _new(): User {
         qrcode: faker.lorem.sentence()
     };
 }
+
+export default withSafeRequest(handler)

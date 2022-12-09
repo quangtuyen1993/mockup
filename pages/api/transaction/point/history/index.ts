@@ -3,8 +3,9 @@ import {
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { successPaging } from '../../../../../lib/DataResult';
-import { generateList } from '../../../../../lib/Utils';
+import { successPaging } from '../../../../../lib/data_result';
+import { generateList } from '../../../../../lib/utility';
+import { withSafeRequest } from '../../../../../lib/with_safe_request';
 type Spending = {
     id: number;
     created_at: Date;
@@ -21,7 +22,10 @@ function spending(): Spending {
     };
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
     var data = generateList<Spending>(spending);
     res.status(200).json(successPaging(data, req));
 }
+
+export default withSafeRequest(handler)
+

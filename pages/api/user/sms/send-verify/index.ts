@@ -1,6 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { emptySuccess } from '../../../../../lib/DataResult';
+import { emptySuccess } from '../../../../../lib/data_result';
+import { withSafeRequest } from '../../../../../lib/with_safe_request';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json(emptySuccess());
 }
+
+export default withSafeRequest(handler)

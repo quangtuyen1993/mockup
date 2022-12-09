@@ -3,10 +3,11 @@ import {
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { generateList } from '../../../../../lib/Utils';
-import { success } from '../../../../../lib/DataResult';
+import { generateList } from '../../../../../lib/utility';
+import { success } from '../../../../../lib/data_result';
+import { withSafeRequest } from '../../../../../lib/with_safe_request';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
     var data = {
         age_group: createAgeGroup(),
         district: createDistrict()
@@ -44,3 +45,5 @@ function createDistrict(): District[] {
     });
     return generateList(ageGroup);
 }
+
+export default withSafeRequest(handler)

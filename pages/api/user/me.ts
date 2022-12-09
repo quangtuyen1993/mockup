@@ -3,7 +3,8 @@ import {
     NextApiResponse
 } from './../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { success } from '../../../lib/DataResult';
+import { success } from '../../../lib/data_result';
+import { withSafeRequest } from '../../../lib/with_safe_request';
 
 type Me = {
     first_name: string;
@@ -24,7 +25,7 @@ type Me = {
     max: number;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ function handler(req: NextApiRequest, res: NextApiResponse) {
     const userMe: Me = {
         first_name: faker.name.firstName(),
         last_name: faker.name.lastName(),
@@ -45,3 +46,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     };
     res.status(200).json(success(userMe));
 }
+
+export default withSafeRequest(handler)

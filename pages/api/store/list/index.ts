@@ -3,8 +3,9 @@ import {
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { successPaging } from '../../../../lib/DataResult';
-import { generateList } from '../../../../lib/Utils';
+import { successPaging } from '../../../../lib/data_result';
+import { generateList } from '../../../../lib/utility';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 type Store = {
     id: number;
     name: string;
@@ -13,7 +14,7 @@ type Store = {
     latitude: string;
     longitude: string;
 };
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
     var data = generateList<Store>(store);
     res.status(200).json(successPaging(data, req));
 }
@@ -28,3 +29,5 @@ function store() {
         longitude: faker.address.longitude()
     };
 }
+
+export default withSafeRequest(handler)

@@ -1,17 +1,16 @@
-import { DataResult } from './../../../../lib/DataResult';
+import { DataResult } from '../../../../lib/data_result';
 import {
     NextApiRequest,
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { success } from '../../../../lib/DataResult';
+import { success } from '../../../../lib/data_result';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
-export default function handler(
+const handler=(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<News>>
-) {
-    res.status(200).json(success(createNews()));
-}
+)=> res.status(200).json(success(createNews()));
 
 type News = {
     id: number;
@@ -34,3 +33,5 @@ function createNews(): News {
         terms_conditions: faker.lorem.paragraphs(20)
     };
 }
+
+export default withSafeRequest(handler);

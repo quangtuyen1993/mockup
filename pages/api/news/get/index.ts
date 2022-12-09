@@ -1,7 +1,8 @@
-import { DataResult, success } from './../../../../lib/DataResult';
+import { DataResult, success } from '../../../../lib/data_result';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { faker } from '@faker-js/faker';
-import { generateList } from '../../../../lib/Utils';
+import { generateList } from '../../../../lib/utility';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type New = {
     id: number;
@@ -10,7 +11,7 @@ type New = {
     image: string[];
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<New>>
 ) {
@@ -25,3 +26,5 @@ function _new(): New {
         image: images
     };
 }
+
+export default withSafeRequest(handler)

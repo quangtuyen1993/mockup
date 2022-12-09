@@ -3,7 +3,8 @@ import {
     NextApiResponse
 } from './../../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { DataResult, success } from '../../../../../../lib/DataResult';
+import { DataResult, success } from '../../../../../../lib/data_result';
+import { withSafeRequest } from '../../../../../../lib/with_safe_request';
 
 type HistoryCoupon = {
     id: number;
@@ -16,7 +17,7 @@ type HistoryCoupon = {
     expired_at: Date;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<HistoryCoupon>>
 ) {
@@ -35,3 +36,5 @@ function createHistoryCoupon(): HistoryCoupon {
         expired_at: faker.date.future()
     };
 }
+
+export default withSafeRequest(handler)

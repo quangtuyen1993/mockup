@@ -1,4 +1,4 @@
-import { NextApiRequest } from './../node_modules/next/dist/shared/lib/utils.d';
+import { NextApiRequest } from 'next/dist/shared/lib/utils';
 import { faker } from '@faker-js/faker';
 
 export interface DataResult<T> {}

@@ -1,16 +1,17 @@
-import { DataResult, success } from './../../../../lib/DataResult';
+import { DataResult, success } from '../../../../lib/data_result';
 import {
     NextApiRequest,
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type Support = {
     title: string;
     slug: string;
     content: string;
 };
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Support>>
 ) {
@@ -21,3 +22,5 @@ export default function handler(
     };
     res.status(200).json(success(support));
 }
+
+export default withSafeRequest(handler)

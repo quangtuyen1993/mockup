@@ -3,8 +3,9 @@ import {
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { DataResult, success } from '../../../../lib/DataResult';
-import { generateList } from '../../../../lib/Utils';
+import { DataResult, success } from '../../../../lib/data_result';
+import { generateList } from '../../../../lib/utility';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type Menu = {
     title: string;
@@ -12,7 +13,7 @@ type Menu = {
     image_list: string[];
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Menu>>
 ) {
@@ -24,3 +25,6 @@ export default function handler(
     };
     res.status(200).json(success(user));
 }
+
+
+export default withSafeRequest(handler)

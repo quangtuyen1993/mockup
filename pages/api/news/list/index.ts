@@ -4,8 +4,9 @@ import {
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { DataResult, successPaging } from '../../../../lib/DataResult';
-import { generateList } from '../../../../lib/Utils';
+import { DataResult, successPaging } from '../../../../lib/data_result';
+import { generateList } from '../../../../lib/utility';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type New = {
     id: number;
@@ -13,7 +14,7 @@ type New = {
     image: string;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<New>>
 ) {
@@ -28,3 +29,5 @@ function _new() {
         image: faker.image.fashion()
     };
 }
+
+export default withSafeRequest(handler)

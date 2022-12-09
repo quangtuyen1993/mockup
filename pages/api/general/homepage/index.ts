@@ -3,8 +3,9 @@ import {
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { DataResult, successPaging } from '../../../../lib/DataResult';
-import { generateList } from '../../../../lib/Utils';
+import { DataResult, successPaging } from '../../../../lib/data_result';
+import { generateList } from '../../../../lib/utility';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type Data = {
     banner: Banner[];
@@ -22,7 +23,7 @@ type NewList = {
     image: string;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Data>>
 ) {
@@ -47,3 +48,5 @@ function createNewList(): NewList[] {
     });
     return generateList<NewList>(_new);
 }
+
+export default withSafeRequest(handler)

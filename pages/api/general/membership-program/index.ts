@@ -1,7 +1,8 @@
 import { faker } from '@faker-js/faker';
-import { generateList } from '../../../../lib/Utils';
-import { DataResult, success } from '../../../../lib/DataResult';
+import { generateList } from '../../../../lib/utility';
+import { DataResult, success } from '../../../../lib/data_result';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type Program = {
     title: string;
@@ -9,7 +10,7 @@ type Program = {
     image_list: string[];
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Program>>
 ) {
@@ -24,3 +25,5 @@ function getUser(): Program {
         image_list: images
     };
 }
+
+export default withSafeRequest(handler)

@@ -1,10 +1,11 @@
-import { DataResult, successPaging } from './../../../../../lib/DataResult';
+import { DataResult, successPaging } from '../../../../../lib/data_result';
 import {
     NextApiRequest,
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { generateList } from '../../../../../lib/Utils';
+import { generateList } from '../../../../../lib/utility';
+import { withSafeRequest } from '../../../../../lib/with_safe_request';
 
 type Coupon = {
     id: number;
@@ -14,7 +15,7 @@ type Coupon = {
     point: number;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Coupon>>
 ) {
@@ -31,3 +32,5 @@ function createCoupon(): Coupon {
         point: faker.datatype.number(1000)
     };
 }
+
+export default withSafeRequest(handler)

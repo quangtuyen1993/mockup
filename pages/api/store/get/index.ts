@@ -3,7 +3,8 @@ import {
     NextApiResponse
 } from './../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { DataResult, success } from '../../../../lib/DataResult';
+import { DataResult, success } from '../../../../lib/data_result';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type Store = {
     id: number;
@@ -26,7 +27,7 @@ type OpeningHour = {
     closed_hour: string;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Store>>
 ) {
@@ -55,3 +56,5 @@ function store(): Store {
         longitude: faker.address.longitude()
     };
 }
+
+export default withSafeRequest(handler)

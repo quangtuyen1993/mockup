@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { DataResult, success } from '../../../../lib/DataResult';
+import { DataResult, success } from '../../../../lib/data_result';
+import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type AboutUs = {
     title: string;
@@ -12,7 +13,7 @@ type AboutUs = {
     instagram: string;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<AboutUs>>
 ) {
@@ -40,3 +41,5 @@ function about_us(): AboutUs {
         instagram: faker.internet.domainName()
     };
 }
+
+export default withSafeRequest(handler)

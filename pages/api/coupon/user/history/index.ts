@@ -3,8 +3,9 @@ import {
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { generateList } from '../../../../../lib/Utils';
-import { DataResult, successPaging } from '../../../../../lib/DataResult';
+import { generateList } from '../../../../../lib/utility';
+import { DataResult, successPaging } from '../../../../../lib/data_result';
+import { withSafeRequest } from '../../../../../lib/with_safe_request';
 
 type History = {
     id: number;
@@ -16,7 +17,7 @@ type History = {
     expired_at: Date;
 };
 
-export default function handler(
+function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<History>>
 ) {
@@ -35,3 +36,6 @@ function _new(): History {
         expired_at: faker.date.future()
     };
 }
+
+export default withSafeRequest(handler)
+
