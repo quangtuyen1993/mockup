@@ -6,8 +6,7 @@ import { faker } from '@faker-js/faker';
 import { error, success } from '../../../../../../lib/DataResult';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    const body = JSON.parse(req.body);
-    if (req.body == 123456) {
+    if (req.body.otp == 123456) {
         const data = {
             verification_code: faker.datatype.uuid()
         };
