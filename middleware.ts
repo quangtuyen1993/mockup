@@ -11,7 +11,7 @@ export function middleware(req: NextRequest) {
     if ((searchParams.get('error') as string) == '1')
         return NextResponse.json(
             {
-                success: 'Bad Request',
+                message: 'Bad Request',
                 server_time: faker.date.recent()
             },
             {
