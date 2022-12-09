@@ -7,6 +7,7 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
+    req.headers.append( 'content-type' ,'application-json' )
     var searchParams = req.nextUrl.searchParams;
     if ((searchParams.get('error') as string) == '1')
         return NextResponse.json(

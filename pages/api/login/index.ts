@@ -1,22 +1,17 @@
-import {
-    NextApiRequest,
-    NextApiResponse
-} from 'next/dist/shared/lib/utils';
-import { faker } from '@faker-js/faker';
-import { onLoginSuccess, success } from '../../../lib/DataResult';
+import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
+import { error, onLoginSuccess, success } from '../../../lib/DataResult';
 
-type User = {
-    userId: number;
-    username: string;
-    email: string;
-    avatar: string;
+type Login = {
     password: string;
-    birthdate: Date;
-    registeredAt: string;
-    fullName: string;
-    address: string;
+    phone: string;
+    prefix: string;
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    res.status(200).json(onLoginSuccess());
+    var userLogin:Login=req.body;
+    if (userLogin.password != 'aA12345@') {
+        res.status(400).json(error('Bad Request'));
+    } else {
+        res.status(200).json(onLoginSuccess());
+    }
 }
