@@ -25,6 +25,12 @@ export interface Error<T> extends DataResult<T> {
     server_time: Date;
 }
 
+export interface SuccessLogin<T> extends DataResult<T> {
+    message: string;
+    server_time: Date;
+    access_token:string
+}
+
 export interface Paging<T> extends Success<T> {
     metadata: Metadata;
     data: T;
@@ -35,6 +41,13 @@ export function success<T>(data: T): Success<T> {
         message: 'OK',
         server_time: faker.date.recent(),
         data: data
+    };
+}
+export function onLoginSuccess<T>(): SuccessLogin<any> {
+    return {
+        message: 'OK',
+        server_time: faker.date.recent(),
+        access_token: faker.finance.bitcoinAddress()
     };
 }
 
