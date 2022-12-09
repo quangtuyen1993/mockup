@@ -17,9 +17,9 @@ type New = {
 function createNew(): New {
     return {
         id: faker.datatype.number(),
-        name: faker.lorem.lines(),
-        description: faker.lorem.paragraphs(),
-        thumbnail: faker.image.avatar(),
+        name: faker.lorem.word(),
+        description: faker.lorem.lines(3),
+        thumbnail: faker.image.animals(),
         point: faker.datatype.number(1000)
     };
 }
