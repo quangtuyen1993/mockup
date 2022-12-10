@@ -26,3 +26,4 @@ yarn-error.log*
 package-lock.json
 .turbo
 yarn.lock
+.vercel
