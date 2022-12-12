@@ -5,6 +5,7 @@ import {
 import { faker } from '@faker-js/faker';
 import { error, success } from '../../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../../lib/with_safe_request';
+import { delay } from '../../../../../../lib/utility';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
     await delay(5000);
@@ -16,10 +17,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     } else {
         res.status(400).json(error('Wrong OTP'));
     }
-}
-
-function delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
 export default withSafeRequest(handler)
