@@ -6,7 +6,8 @@ import { faker } from '@faker-js/faker';
 import { error, success } from '../../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../../lib/with_safe_request';
 
-function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
+    await delay(5000);
     if (req.body.otp == 123456) {
         const data = {
             verification_code: faker.datatype.uuid()
@@ -15,6 +16,10 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     } else {
         res.status(400).json(error('Wrong OTP'));
     }
+}
+
+function delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
 export default withSafeRequest(handler)
