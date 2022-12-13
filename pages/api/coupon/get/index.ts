@@ -28,7 +28,7 @@ function createNews(): News {
         name: faker.lorem.lines(),
         description: faker.lorem.paragraphs(),
         thumbnail: faker.image.avatar(),
-        point: faker.datatype.number(1000),
+        point: faker.datatype.number(10),
         image: faker.image.fashion(),
         terms_conditions: faker.lorem.paragraphs(10)
     };
