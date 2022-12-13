@@ -5,10 +5,11 @@ import { generateList } from '../../../../lib/utility';
 import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type New = {
-    id: number;
+    id: string;
     title: string;
     content: string;
     image: string[];
+    start_date: string;
 };
 
 function handler(
@@ -20,10 +21,11 @@ function handler(
 function _new(): New {
     const images = generateList<string>(faker.image.sports);
     return {
-        id: faker.datatype.number(),
+        id: faker.datatype.number().toString(),
         title: faker.lorem.word(),
         content: faker.lorem.paragraphs(),
-        image: images
+        image: images,
+        start_date: '2022-07-12 00:00:00'
     };
 }
 
