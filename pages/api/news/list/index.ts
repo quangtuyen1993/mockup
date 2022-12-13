@@ -9,7 +9,7 @@ import { generateList } from '../../../../lib/utility';
 import { withSafeRequest } from '../../../../lib/with_safe_request';
 
 type New = {
-    id: number;
+    id: string;
     title: string;
     image: string;
 };
@@ -24,7 +24,7 @@ function handler(
 
 function _new() {
     return {
-        id: faker.datatype.number(),
+        id: faker.datatype.number().toString(),
         title: faker.lorem.word(),
         image: faker.image.fashion()
     };
