@@ -26,7 +26,7 @@ function _new() {
     return {
         id: faker.datatype.number().toString(),
         title: faker.lorem.word(),
-        image: faker.image.fashion()
+        image: faker.image.food()
     };
 }
 
