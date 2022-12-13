@@ -3,7 +3,7 @@ import {
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
 import { faker } from '@faker-js/faker';
-import { generateList } from '../../../../../lib/utility';
+import { DateOrNull, generateList, randomDate } from '../../../../../lib/utility';
 import { DataResult, successPaging } from '../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../lib/with_safe_request';
 
@@ -13,7 +13,7 @@ type History = {
     description: string;
     thumbnail: string;
     status: number;
-    used_at: Date;
+    used_at: DateOrNull;
     expired_at: Date;
 };
 
@@ -26,13 +26,14 @@ function handler(
 }
 
 function _new(): History {
+   
     return {
         id: faker.datatype.number(),
         name: faker.animal.bear(),
         description: faker.lorem.paragraph(),
         thumbnail: faker.image.animals(),
-        status: 0,
-        used_at: faker.date.recent(),
+        status: faker.datatype.number({min:0,max:1}),
+        used_at: randomDate(faker.date.recent()),
         expired_at: faker.date.future()
     };
 }
