@@ -30,7 +30,7 @@ function createNews(): News {
         thumbnail: faker.image.avatar(),
         point: faker.datatype.number(1000),
         image: faker.image.fashion(),
-        terms_conditions: faker.lorem.paragraphs(20)
+        terms_conditions: faker.lorem.paragraphs(10)
     };
 }
 
