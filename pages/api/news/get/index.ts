@@ -19,7 +19,7 @@ function handler(
     res.status(200).json(success(_new()));
 }
 function _new(): New {
-    const images = generateList<string>(faker.image.sports);
+    const images = generateList<string>(faker.image.food);
     return {
         id: faker.datatype.number().toString(),
         title: faker.lorem.word(),
