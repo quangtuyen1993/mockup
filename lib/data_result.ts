@@ -67,7 +67,7 @@ export function successPaging<T>(data: T, req: NextApiRequest): Paging<T> {
         metadata: {
             page: page,
             record_cnt: 10,
-            total_cnt: 30
+            total_cnt: 50
         }
     };
 }
