@@ -22,7 +22,7 @@ function handler(
 
 function about_us(): AboutUs {
     return {
-        title: faker.lorem.lines(),
+        title: faker.lorem.words(),
         content: `<!DOCTYPE html>
     <html>
     <body>
