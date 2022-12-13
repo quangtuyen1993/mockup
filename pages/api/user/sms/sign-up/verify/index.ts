@@ -8,7 +8,7 @@ import { withSafeRequest } from '../../../../../../lib/with_safe_request';
 import { delay } from '../../../../../../lib/utility';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-    await delay(5000);
+    // await delay(5000);
     if (req.body.otp == 123456) {
         const data = {
             verification_code: faker.datatype.uuid()
