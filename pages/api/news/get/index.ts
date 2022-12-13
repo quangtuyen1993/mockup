@@ -8,7 +8,7 @@ type New = {
     id: string;
     title: string;
     content: string;
-    image: string[];
+    image_list: string[];
     start_date: string;
 };
 
@@ -24,7 +24,7 @@ function _new(): New {
         id: faker.datatype.number().toString(),
         title: faker.lorem.word(),
         content: faker.lorem.paragraphs(),
-        image: images,
+        image_list: images,
         start_date: '2022-07-12 00:00:00'
     };
 }
