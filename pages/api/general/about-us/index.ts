@@ -35,10 +35,10 @@ function about_us(): AboutUs {
     </body>
     </html> `,
         image: faker.image.animals(),
-        our_website: faker.internet.domainName(),
-        contact_us: faker.internet.email(),
-        facebook: faker.internet.userAgent(),
-        instagram: faker.internet.domainName()
+        our_website: 'https://www.pizzamaru.com.hk',
+        contact_us: 'https://www.pizzamaru.com.hk/messageus',
+        facebook: 'https://www.facebook.com/pizzamaruhk',
+        instagram: 'https://www.instagram.com/pizzamaruhk/?hl=en'
     };
 }
 
