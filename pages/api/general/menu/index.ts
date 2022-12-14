@@ -17,7 +17,7 @@ function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Menu>>
 ) {
-    const images = generateList<string>(faker.image.food());
+    const images = generateList<string>(()=> faker.image.food(390, 844));
     const user = {
         title: faker.company.name(),
         content: faker.lorem.paragraph(10),
