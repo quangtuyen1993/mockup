@@ -17,11 +17,11 @@ function handler(
     req: NextApiRequest,
     res: NextApiResponse<DataResult<Menu>>
 ) {
-    const images = generateList<string>(faker.image.food);
+    const images = generateList<string>(faker.image.food());
     const user = {
         title: faker.company.name(),
         content: faker.lorem.paragraph(10),
-        image_list: images
+        image: images
     };
     res.status(200).json(success(user));
 }
