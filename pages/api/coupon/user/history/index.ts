@@ -26,7 +26,6 @@ function handler(
 }
 
 function _new(): History {
-   
     return {
         id: faker.datatype.number(),
         name: faker.animal.bear(),

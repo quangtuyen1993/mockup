@@ -5,6 +5,7 @@ import {
 import { faker } from '@faker-js/faker';
 import { DataResult, success } from '../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../lib/with_safe_request';
+import { termsConditions } from '../../../../../lib/utility';
 
 type User = {
     id: number;
@@ -29,7 +30,7 @@ function _new(): User {
         id: faker.datatype.number(),
         name: faker.company.name(),
         description: faker.lorem.paragraph(),
-        terms_conditions: faker.lorem.paragraphs(10),
+        terms_conditions: termsConditions(),
         image: faker.image.animals(),
         expired_at: faker.date.future(),
         point: faker.datatype.number(),

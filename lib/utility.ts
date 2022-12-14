@@ -24,3 +24,11 @@ export function randomDate(expiredDate:Date):DateOrNull{
         return expiredDate;
     }
 }
+
+export function termsConditions(lines :number=5):string{
+    var result='';
+    for (let index = 0; index <lines; index++) {
+        result +=`<p> ${index+1}. ${faker.lorem.lines(1)} </p> </br>`
+    }
+    return result;
+}
