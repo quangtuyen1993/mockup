@@ -6,6 +6,7 @@ import { faker } from '@faker-js/faker';
 import { DataResult, success } from '../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../lib/with_safe_request';
 import { termsConditions } from '../../../../../lib/utility';
+import { randomECouponType } from '../../../../../model/ecoupon_type';
 
 type User = {
     id: number;
@@ -16,6 +17,7 @@ type User = {
     expired_at: Date;
     point: number;
     qrcode: string;
+    type: string;
 };
 
 function handler(
@@ -34,8 +36,9 @@ function _new(): User {
         image: faker.image.animals(),
         expired_at: faker.date.future(),
         point: faker.datatype.number(),
-        qrcode: faker.lorem.sentence()
+        qrcode: faker.lorem.sentence(),
+        type: randomECouponType()
     };
 }
 
-export default withSafeRequest(handler)
+export default withSafeRequest(handler);

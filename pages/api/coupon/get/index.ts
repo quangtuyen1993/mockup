@@ -26,7 +26,7 @@ type News = {
 function createNews(): News {
     return {
         id: 0,
-        name: faker.lorem.lines(),
+        name: faker.lorem.words(3),
         description: faker.lorem.paragraphs(),
         thumbnail: faker.image.avatar(),
         point: faker.datatype.number(10),

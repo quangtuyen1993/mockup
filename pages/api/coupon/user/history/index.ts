@@ -6,6 +6,7 @@ import { faker } from '@faker-js/faker';
 import { DateOrNull, generateList, randomDate } from '../../../../../lib/utility';
 import { DataResult, successPaging } from '../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../lib/with_safe_request';
+import { randomECouponType } from '../../../../../model/ecoupon_type';
 
 type History = {
     id: number;
@@ -15,6 +16,7 @@ type History = {
     status: number;
     used_at: DateOrNull;
     expired_at: Date;
+    type:string
 };
 
 function handler(
@@ -33,7 +35,9 @@ function _new(): History {
         thumbnail: faker.image.animals(),
         status: faker.datatype.number({min:0,max:1}),
         used_at: randomDate(faker.date.recent()),
-        expired_at: faker.date.future()
+        expired_at: faker.date.future(),
+        type: randomECouponType()
+    
     };
 }
 
