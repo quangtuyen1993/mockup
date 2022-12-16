@@ -18,7 +18,7 @@ function handler(
     const support = [
         {
             title: 'Term & Conditions',
-            slug: 'term-conditions',
+            slug: 'term-and-conditions',
             content: `
             <!DOCTYPE html>
 <html>
