@@ -49,7 +49,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
 export default withSafeRequest(handler);
 
-type Priority = 'gold' | 'saver' | 'sliver';
+type Priority = 'gold' | 'saver' | 'silver';
 
 function randomPriority(): Priority {
     var number = faker.datatype.number({ min: 1, max: 3 });
@@ -57,7 +57,7 @@ function randomPriority(): Priority {
         case 1:
             return 'gold';
         case 2:
-            return 'sliver';
+            return 'silver';
         default:
             return 'saver';
     }
