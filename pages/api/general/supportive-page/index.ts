@@ -20,7 +20,7 @@ function handler(
             title: 'Term & Conditions',
             slug: 'term-conditions',
             content: `
-            !DOCTYPE html>
+            <!DOCTYPE html>
 <html>
 
 <body>
@@ -41,7 +41,7 @@ function handler(
             title: 'Privacy Policy',
             slug: 'privacy-policy',
             content: `
-            !DOCTYPE html>
+            <!DOCTYPE html>
 <html>
 
 <body>
@@ -62,7 +62,7 @@ function handler(
             title: 'Disclaimer',
             slug: 'disclaimer',
             content: `
-            !DOCTYPE html>
+            <!DOCTYPE html>
 <html>
 
 <body>
