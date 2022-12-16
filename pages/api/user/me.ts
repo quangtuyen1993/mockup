@@ -25,7 +25,7 @@ type Me = {
     max: number;
 };
 
- function handler(req: NextApiRequest, res: NextApiResponse) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
     const userMe: Me = {
         first_name: faker.name.firstName(),
         last_name: faker.name.lastName(),
@@ -37,7 +37,7 @@ type Me = {
         birthday: faker.date.birthdate(),
         created_at: faker.date.past(),
         member_no: faker.datatype.number(),
-        membership_name: faker.finance.accountName(),
+        membership_name: randomPriority(),
         point: faker.datatype.number(),
         spending: faker.datatype.number({ min: 20, max: 80 }),
         expired_at: faker.date.future(),
@@ -47,4 +47,18 @@ type Me = {
     res.status(200).json(success(userMe));
 }
 
-export default withSafeRequest(handler)
+export default withSafeRequest(handler);
+
+type Priority = 'gold' | 'saver' | 'sliver';
+
+function randomPriority(): Priority {
+    var number = faker.datatype.number({ min: 1, max: 3 });
+    switch (number) {
+        case 1:
+            return 'gold';
+        case 2:
+            return 'sliver';
+        default:
+            return 'saver';
+    }
+}
