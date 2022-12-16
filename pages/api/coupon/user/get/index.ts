@@ -35,7 +35,7 @@ function _new(): User {
         terms_conditions: termsConditions(),
         image: faker.image.animals(),
         expired_at: faker.date.future(),
-        point: faker.datatype.number(),
+        point: faker.datatype.number({min:0,max:100}),
         qrcode: faker.lorem.sentence(),
         type: randomECouponType()
     };
