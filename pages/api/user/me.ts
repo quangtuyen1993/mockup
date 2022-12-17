@@ -53,12 +53,19 @@ type Priority = 'gold' | 'saver' | 'silver';
 
 function randomPriority(): Priority {
     var number = faker.datatype.number({ min: 1, max: 3 });
+    console.log(number);
     switch (number) {
-        case 1:
+        case 1: {
+            console.log('here gold')
             return 'gold';
-        case 2:
+        }
+        case 2: {
+            console.log('here sliver')
+
             return 'silver';
-        default:
+        }
+        default: {
             return 'saver';
+        }
     }
 }
