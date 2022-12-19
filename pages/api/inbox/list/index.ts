@@ -11,7 +11,7 @@ type Inbox = {
     title: string;
     body: string;
     read_at: string | null;
-    created_at: String;
+    created_at: string;
 };
 
 function handler(
@@ -29,8 +29,8 @@ function _item() {
         type: 1,
         title: faker.lorem.sentence(),
         body: faker.lorem.sentences(),
-        read_at: faker.date.past.toLocaleString(),
-        created_at : faker.date.toLocaleString()
+        read_at: faker.date.past().toLocaleString(),
+        created_at : faker.date.past().toLocaleString()
     };
 }
 
