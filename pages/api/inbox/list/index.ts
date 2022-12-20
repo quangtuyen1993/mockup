@@ -19,7 +19,7 @@ function handler(
     res: NextApiResponse<DataResult<EmptySuccess>>
 ) {
     const newList = generateList<Inbox>(_item);
-    res.status(200).json(successPaging([], req));
+    res.status(200).json(successPaging(newList, req));
 }
 
 
