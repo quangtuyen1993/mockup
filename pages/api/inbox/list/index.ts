@@ -1,4 +1,4 @@
-import { DataResult, EmptySuccess, emptySuccess, success, successPaging } from '../../../../lib/data_result';
+import { DataResult, EmptySuccess, emptySuccess, successPaging } from '../../../../lib/data_result';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { withSafeRequest } from '../../../../lib/with_safe_request';
 import { StringColorFormat } from '@faker-js/faker';
@@ -19,7 +19,7 @@ function handler(
     res: NextApiResponse<DataResult<EmptySuccess>>
 ) {
     const newList = generateList<Inbox>(_item);
-    res.status(200).json(success([]));
+    res.status(200).json(successPaging([], req));
 }
 
 
