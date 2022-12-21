@@ -24,9 +24,9 @@ function handler(
 
 
 function _item() {
-    return {
+    return { 
         id: faker.datatype.number().toString(),
-        type: 1,
+        type: Math.floor(Math.random() * 3) + 1,
         title: faker.lorem.sentence(),
         body: faker.lorem.sentences(),
         read_at: faker.date.past().toISOString(),
