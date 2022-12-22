@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next/dist/shared/lib/utils';
-import { error, onLoginSuccess, success } from '../../../lib/data_result';
+import { error, onLoginSuccess } from '../../../lib/data_result';
 import { withSafeRequest } from '../../../lib/with_safe_request';
 
 type Login = {

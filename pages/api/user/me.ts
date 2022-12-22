@@ -26,6 +26,7 @@ type Me = {
 };
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
+    var email=req.body
     const userMe: Me = {
         first_name: faker.name.firstName(),
         last_name: faker.name.lastName(),

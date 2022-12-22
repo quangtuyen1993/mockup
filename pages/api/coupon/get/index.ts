@@ -8,10 +8,8 @@ import { success } from '../../../../lib/data_result';
 import { withSafeRequest } from '../../../../lib/with_safe_request';
 import { termsConditions } from '../../../../lib/utility';
 
-const handler=(
-    req: NextApiRequest,
-    res: NextApiResponse<DataResult<News>>
-)=> res.status(200).json(success(createNews()));
+const handler = (req: NextApiRequest, res: NextApiResponse<DataResult<News>>) =>
+    res.status(200).json(success(createNews()));
 
 type News = {
     id: number;
