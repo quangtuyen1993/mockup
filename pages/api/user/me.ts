@@ -5,6 +5,7 @@ import {
 import { faker } from '@faker-js/faker';
 import { success } from '../../../lib/data_result';
 import { withSafeRequest } from '../../../lib/with_safe_request';
+import { min } from 'date-fns';
 
 type Me = {
     first_name: string;
@@ -32,8 +33,8 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
         last_name: faker.name.lastName(),
         email: faker.internet.email(),
         district_id: faker.datatype.number(10),
-        gender: faker.datatype.number(1),
-        age_group: faker.datatype.number(30),
+        gender: faker.datatype.number({min:1,max:10}),
+        age_group: faker.datatype.number(10),
         phone_no: faker.phone.phoneNumber(),
         birthday: faker.date.birthdate(),
         created_at: faker.date.past(),
