@@ -33,7 +33,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
         last_name: faker.name.lastName(),
         email: faker.internet.email(),
         district_id: faker.datatype.number(10),
-        gender: faker.datatype.number({min:1,max:10}),
+        gender: 1,
         age_group: faker.datatype.number(10),
         phone_no: faker.phone.phoneNumber(),
         birthday: faker.date.birthdate(),
