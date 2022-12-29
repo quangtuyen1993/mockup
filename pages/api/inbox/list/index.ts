@@ -25,12 +25,12 @@ function handler(
 
 function _item() {
     return { 
-        id: faker.datatype.number().toString(),
-        type: Math.floor(Math.random() * 3) + 1,
-        title: faker.lorem.sentence(),
-        body: faker.lorem.sentences(),
-        read_at: faker.date.past().toISOString(),
-        created_at : faker.date.past().toISOString()
+        id: 1,
+        type: 1,
+        title: 'faker.lorem.sentence()',
+        body: 'faker.lorem.sentences()',
+        read_at: '2012-02-27',
+        created_at : '2012-02-27'
     };
 }
 
