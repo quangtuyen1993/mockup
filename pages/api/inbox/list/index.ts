@@ -25,8 +25,8 @@ function handler(
 
 function _item() {
     return { 
-        id: 1,
-        type: 1,
+        id: '1',
+        type: '1',
         title: 'faker.lorem.sentence()',
         body: 'faker.lorem.sentences()',
         read_at: '2012-02-27',
