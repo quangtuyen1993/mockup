@@ -1,4 +1,4 @@
-import { DataResult, EmptySuccess, emptySuccess } from '../../../../lib/data_result';
+import { DataResult, EmptySuccess, emptySuccess, success } from '../../../../lib/data_result';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { withSafeRequest } from '../../../../lib/with_safe_request';
 import { StringColorFormat } from '@faker-js/faker';
@@ -18,9 +18,8 @@ function handler(
     res: NextApiResponse<DataResult<EmptySuccess>>
 ) {
     
-    res.status(200).json(emptySuccess());
+    res.status(200).json(success(getRandomInt() == 0? []:[_item()]));
 }
-
 
 function _item() {
     return {
@@ -32,6 +31,10 @@ function _item() {
         created_at : faker.date.toLocaleString()
     };
 }
+
+function getRandomInt() {
+    return Math.floor(Math.random() * 2);
+  }
 
 
 export default withSafeRequest(handler)
