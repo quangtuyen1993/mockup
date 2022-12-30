@@ -27,8 +27,8 @@ function _item() {
         type: 1,
         title: faker.lorem.word(),
         body: faker.lorem.sentence(),
-        read_at: faker.date.past.toLocaleString(),
-        created_at : faker.date.toLocaleString()
+        read_at: faker.date.past().toLocaleString(),
+        created_at : faker.date.past().toLocaleString()
     };
 }
 
