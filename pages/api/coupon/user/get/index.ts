@@ -2,7 +2,7 @@ import {
     NextApiRequest,
     NextApiResponse
 } from './../../../../../node_modules/next/dist/shared/lib/utils.d';
-import { faker } from '@faker-js/faker';
+import { Faker, faker } from '@faker-js/faker';
 import { DataResult, success } from '../../../../../lib/data_result';
 import { withSafeRequest } from '../../../../../lib/with_safe_request';
 import { termsConditions } from '../../../../../lib/utility';
@@ -18,6 +18,7 @@ type User = {
     point: number;
     qrcode: string;
     type: string;
+    qty:number
 };
 
 function handler(
@@ -37,7 +38,8 @@ function _new(): User {
         expired_at: faker.date.future(),
         point: faker.datatype.number({min:0,max:100}),
         qrcode: faker.lorem.sentence(),
-        type: randomECouponType()
+        type: randomECouponType(),
+        qty:faker.datatype.number({min:1,max:100})
     };
 }
 
