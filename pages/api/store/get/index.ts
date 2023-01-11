@@ -17,8 +17,8 @@ type Store = {
     closet_mtr: string;
     opening_hour: OpeningHour[];
     last_order: Date;
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
 };
 
 type OpeningHour = {
@@ -52,8 +52,8 @@ function store(): Store {
             }
         ],
         last_order: faker.date.past(),
-        latitude: faker.address.latitude(),
-        longitude: faker.address.longitude()
+        latitude: 22.2845080,
+        longitude: 114.21599,
     };
 }
 
