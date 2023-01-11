@@ -11,8 +11,8 @@ type Store = {
     name: string;
     district_name: string;
     thumbnail: string;
-    latitude: string;
-    longitude: string;
+    latitude: number;
+    longitude: number;
 };
 function handler(req: NextApiRequest, res: NextApiResponse) {
     var data = generateList<Store>(store);
@@ -24,9 +24,9 @@ function store() {
         id: faker.datatype.number(),
         name: faker.name.fullName(),
         district_name: faker.address.country(),
-        thumbnail: faker.image.avatar(),
-        latitude: faker.address.latitude(),
-        longitude: faker.address.longitude()
+        thumbnail: faker.image.animals(),
+        latitude: 22.2845080,
+        longitude: 114.21599,
     };
 }
 
